@@ -8,6 +8,7 @@ var firebaseConfig = {
   appId: "1:67159095877:web:07921ec9c5b461af89412c",
 };
 firebase.initializeApp(firebaseConfig);
+
 $(document).ready(function () {
   var database = firebase.database();
   var Led2Status;
