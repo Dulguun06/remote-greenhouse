@@ -9,27 +9,58 @@
     <script src="script.js"></script>
 
     <link
-      href="https://use.fontawesome.com/releases/v5.0.4/css/all.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="progress-circular">
-        <span class="value">0%</span>
+      <div class="col">
+        <div class="progress-circular">
+          <span class="value">0°</span>
+        </div>
+        <div class="text">Inside Temperature</div>
       </div>
-      <div class="text">Enter Any Number</div>
-      <div class="btn">
-        <input class="input-bar-1" type="text" autofocus />
-        <button class="bar-btn-1">Enter</button>
+
+      <div class="col">
+        <div class="progress-circular-2">
+          <span class="value-2">0%</span>
+        </div>
+        <div class="text">Humidity</div>
+      </div>
+
+      <div class="col">
+        <div class="progress-circular-3">
+          <span class="value-3">0°</span>
+        </div>
+        <div class="text">Outside Temperature</div>
+      </div>
+
+      <div class="col">
+        <div class="progress-circular-4">
+          <span class="value-4">0%</span>
+        </div>
+        <div class="text">Sun Light</div>
       </div>
     </div>
-    <script src="progress.js"></script>
+
     <div class="wrapper">
       <div class="progress">
         <a class="icon1">
-          <i class="fas fa-4x fa-utensils"></i>
+          <i class="fas fa-4x fa-fan"></i>
+        </a>
+        <div class="toggle-btn" id="unact">
+          <div class="inner-circle"></div>
+        </div>
+        <div class="toggle-btn active" id="act">
+          <div class="inner-circle"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <a class="icon1">
+          <i class="fa fa-4x fa-wind"></i>
         </a>
         <div class="toggle-btn1" id="unact1">
           <div class="inner-circle"></div>
@@ -41,7 +72,7 @@
 
       <div class="progress">
         <a class="icon1">
-          <i class="fas fa-4x fa-tv"></i>
+          <i class="fa fa-4x fa-door-open"></i>
         </a>
         <div class="toggle-btn2" id="unact2">
           <div class="inner-circle"></div>
@@ -50,6 +81,38 @@
           <div class="inner-circle"></div>
         </div>
       </div>
+
+      <div class="progress">
+        <a class="icon1">
+          <i class="fas fa-4x fa-automobile"></i>
+        </a>
+        <div class="toggle-btn3" id="unact3">
+          <div class="inner-circle"></div>
+        </div>
+        <div class="toggle-btn3 active" id="act3">
+          <div class="inner-circle"></div>
+        </div>
+      </div>
     </div>
+
+    <div class="container">
+      <div class="col">
+        <p>Fan</p>
+        <div class="circle" id="fan"></div>
+      </div>
+      <div class="col">
+        <p>Door</p>
+        <div class="circle" id="door"></div>
+      </div>
+      <div class="col">
+        <p>Room temp > 50</p>
+        <div class="circle" id="alarm_1"></div>
+      </div>
+      <div class="col">
+        <p>Room temp < 10</p>
+        <div class="off_circle" id="alarm_2"></div>
+      </div>
+    </div>
+    <script src="progress.js"></script>
   </body>
 </html>

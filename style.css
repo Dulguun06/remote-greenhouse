@@ -15,13 +15,21 @@ body {
 }
 .container {
   position: relative;
-  width: 500px;
+  width: 1080px;
+  margin: auto;
   padding: 50px;
   background-color: #fefefe;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   border-radius: 20px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .progress-circular {
   position: relative;
@@ -41,7 +49,79 @@ body {
   border-radius: 50%;
   background: #fefefe;
 }
+.progress-circular-2 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: conic-gradient(#880bea 0deg, #ededed 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-circular-2::after {
+  position: absolute;
+  content: "";
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: #fefefe;
+}
+.progress-circular-3 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: conic-gradient(#880bea 0deg, #ededed 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-circular-3::after {
+  position: absolute;
+  content: "";
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: #fefefe;
+}
+.progress-circular-4 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: conic-gradient(#880bea 0deg, #ededed 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-circular-4::after {
+  position: absolute;
+  content: "";
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: #fefefe;
+}
 .value {
+  font-size: 60px;
+  font-weight: 600;
+  color: #880bea;
+  z-index: 9;
+}
+.value-2 {
+  font-size: 60px;
+  font-weight: 600;
+  color: #880bea;
+  z-index: 9;
+}
+.value-3 {
+  font-size: 60px;
+  font-weight: 600;
+  color: #880bea;
+  z-index: 9;
+}
+.value-4 {
   font-size: 60px;
   font-weight: 600;
   color: #880bea;
@@ -53,38 +133,10 @@ body {
   color: #880bea;
   margin: 20px 0;
 }
-.btn {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-}
-input {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  border: 1px solid #880bea;
-  border-radius: 10px 10px 0 0;
-  outline: none;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 600;
-  color: #880bea;
-}
-button {
-  border-radius: 0 0 10px 10px;
-  outline: none;
-  background: #880bea;
-  color: #fff;
-  font-size: 18px;
-  border: none;
-}
-button:active {
-  color: #880bea;
-}
 
 .wrapper {
   height: 100vh;
-  width: 100%;
+  width: 1024px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -148,4 +200,24 @@ button:active {
 .icon1 {
   color: #fff;
   margin: 10px auto;
+}
+.circle {
+  margin-top: 1vw;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px #fff, inset 3px 0 12px #f0f, inset -3px 0 12px #0ff,
+    inset 3px 0 50px #f0f, inset -3px 0 50px #0ff, 0 0 50px #fff,
+    -2px 0 12px #f0f, 2px 0 12px #0ff;
+}
+.off_circle {
+  margin-top: 1vw;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px #000, inset 3px 0 12px #202020, inset -3px 0 12px #404040,
+    inset 3px 0 50px #fefefe, inset -3px 0 50px #808080, 0 0 50px #fff,
+    -2px 0 12px #808080, 2px 0 12px #202020;
 }
