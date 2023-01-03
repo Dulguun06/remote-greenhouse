@@ -13,7 +13,7 @@ var door_element = document.getElementById("door");
 var alarm1_element = document.getElementById("alarm_1");
 var alarm2_element = document.getElementById("alarm_2");
 
-let efan_val,fan_val,door_val;
+let efan_val, fan_val, door_val;
 
 let start = 0,
   start_2 = 0,
@@ -21,27 +21,25 @@ let start = 0,
   start_4 = 0;
 
 var database = firebase.database();
-var data, data_hum, data_out,data_sun;
+var data, data_hum, data_out, data_sun;
 
-
-
-function get_exit_fan(){
+function get_exit_fan() {
   var efan_ref = database.ref("exit_fan");
-  efan_ref.on("value", function(snapshot) {
+  efan_ref.on("value", function (snapshot) {
     efan_val = snapshot.val();
-  })
+  });
 }
-function get_enter_fan(){
+function get_enter_fan() {
   var fan_ref = database.ref("enter_fan");
-  fan_ref.on("value", function(snapshot) {
+  fan_ref.on("value", function (snapshot) {
     fan_val = snapshot.val();
-  })
+  });
 }
-function get_door(){
+function get_door() {
   var door_ref = database.ref("door");
-  door_ref.on("value", function(snapshot) {
+  door_ref.on("value", function (snapshot) {
     door_val = snapshot.val();
-  })
+  });
 }
 
 function get_temperature() {
@@ -71,27 +69,22 @@ function get_sun() {
     data_sun = snapshot.val();
   });
 }
-function check(){
+function check() {
   get_door();
   get_exit_fan();
   get_enter_fan();
   get_temperature();
 
-  if(fan_val==0 && efan_val==0)
-    fan_element.className = "off_circle";
+  if (fan_val == 0 && efan_val == 0) fan_element.className = "off_circle";
   else fan_element.className = "circle";
 
-  if(door_val==0)
-    door_element.className = "off_circle";
+  if (door_val == 0) door_element.className = "off_circle";
   else door_element.className = "circle";
 
-  if(data<50)
-    alarm1_element.className = "off_circle";
+  if (data < 50) alarm1_element.className = "off_circle";
   else alarm1_element.className = "circle";
-  if(data>10)
-    alarm2_element.className = "off_circle";
+  if (data > 10) alarm2_element.className = "off_circle";
   else alarm2_element.className = "circle";
-
 }
 
 function bar_in() {
@@ -185,7 +178,6 @@ function bar_sun() {
     }
   }, 1);
 }
-
 
 setInterval(bar_in, 1000);
 setInterval(bar_out, 1000);

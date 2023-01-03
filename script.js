@@ -11,12 +11,12 @@ firebase.initializeApp(firebaseConfig);
 
 $(document).ready(function () {
   var database = firebase.database();
-  
+
   var Led1Status;
   var Led2Status;
   var Led3Status;
   var Led4Status;
-  
+
   database.ref().on("value", function (snap) {
     Led1Status = snap.val().Led1Status;
     Led2Status = snap.val().Led2Status;
