@@ -12,31 +12,31 @@ firebase.initializeApp(firebaseConfig);
 $(document).ready(function () {
   var database = firebase.database();
 
-  var Led1Status;
-  var Led2Status;
-  var Led3Status;
+  var enter_fan;
+  var exit_fan;
+  var door;
   var Led4Status;
 
   database.ref().on("value", function (snap) {
-    Led1Status = snap.val().Led1Status;
-    Led2Status = snap.val().Led2Status;
-    Led3Status = snap.val().Led3Status;
+    enter_fan = snap.val().enter_fan;
+    exit_fan = snap.val().exit_fan;
+    door = snap.val().door;
     Led4Status = snap.val().Led4Status;
-    if (Led1Status == "1") {
+    if (enter_fan == "1") {
       document.getElementById("unact").style.display = "none";
       document.getElementById("act").style.display = "block";
     } else {
       document.getElementById("unact").style.display = "block";
       document.getElementById("act").style.display = "none";
     }
-    if (Led2Status == "1") {
+    if (exit_fan == "1") {
       document.getElementById("unact1").style.display = "none";
       document.getElementById("act1").style.display = "block";
     } else {
       document.getElementById("unact1").style.display = "block";
       document.getElementById("act1").style.display = "none";
     }
-    if (Led3Status == "1") {
+    if (door == "1") {
       document.getElementById("unact2").style.display = "none";
       document.getElementById("act2").style.display = "block";
     } else {
@@ -53,33 +53,33 @@ $(document).ready(function () {
   });
 
   $(".toggle-btn").click(function () {
-    var firebaseRef = firebase.database().ref().child("Led1Status");
-    if (Led1Status == "1") {
+    var firebaseRef = firebase.database().ref().child("enter_fan");
+    if (enter_fan == "1") {
       firebaseRef.set("0");
-      Led1Status = "0";
+      enter_fan = "0";
     } else {
       firebaseRef.set("1");
-      Led1Status = "1";
+      enter_fan = "1";
     }
   });
   $(".toggle-btn1").click(function () {
-    var firebaseRef = firebase.database().ref().child("Led2Status");
-    if (Led2Status == "1") {
+    var firebaseRef = firebase.database().ref().child("exit_fan");
+    if (exit_fan == "1") {
       firebaseRef.set("0");
-      Led2Status = "0";
+      exit_fan = "0";
     } else {
       firebaseRef.set("1");
-      Led2Status = "1";
+      exit_fan = "1";
     }
   });
   $(".toggle-btn2").click(function () {
-    var firebaseRef = firebase.database().ref().child("Led3Status");
-    if (Led3Status == "1") {
+    var firebaseRef = firebase.database().ref().child("door");
+    if (door == "1") {
       firebaseRef.set("0");
-      Led3Status = "0";
+      door = "0";
     } else {
       firebaseRef.set("1");
-      Led3Status = "1";
+      door = "1";
     }
   });
   $(".toggle-btn3").click(function () {
